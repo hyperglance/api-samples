@@ -1,0 +1,581 @@
+{
+	"info": {
+		"_postman_id": "95c3c1ea-b1b4-41cf-b346-b1daec1cfbfa",
+		"name": "Hyperglance API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Export to VSDX",
+			"item": [
+				{
+					"name": "Export AWS diagram to VSDX",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "application/octet-stream"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"datasource\" : \"Datasource_Group\",\r\n\t\"account\" : \"Amazon\",\r\n\t\"id\" : \"Amazon\"\r\n}"
+						},
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/export-vsdx",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"export-vsdx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export Azure diagram to VSDX",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "application/octet-stream"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"datasource\" : \"Datasource_Group\",\r\n\t\"account\" : \"Azure\",\r\n\t\"id\" : \"Azure\"\r\n}"
+						},
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/export-vsdx",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"export-vsdx"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Export to PNG",
+			"item": [
+				{
+					"name": "Export AWS diagram to PNG",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "application/octet-stream"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"datasource\" : \"Datasource_Group\",\r\n\t\"account\" : \"Amazon\",\r\n\t\"id\" : \"Amazon\"\r\n}"
+						},
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/export-png",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"export-png"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export Azure diagram to PNG",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Encoding",
+								"type": "text",
+								"value": "application/octet-stream"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"datasource\" : \"Datasource_Group\",\r\n\t\"account\" : \"Azure\",\r\n\t\"id\" : \"Azure\"\r\n}"
+						},
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/export-png",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"export-png"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Accounts & Subscriptions",
+			"item": [
+				{
+					"name": "List Collector Records",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "712399db-9dfd-4d65-a831-f00b42281093",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "export",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/records?datasource=Amazon",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"records"
+							],
+							"query": [
+								{
+									"key": "datasource",
+									"value": "Amazon"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add AWS Account Record",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"values\": {\n\t\t\"Account Alias\": \"My AWS\",\n\t\t\"Role ARN\": \"\",\n        \"Regions\" : [\n\t\t\t\"US East (N. Virginia)\",\n\t\t\t\"US East (Ohio)\",\n\t\t\t\"US West (N. California)\",\n\t\t\t\"US West (Oregon)\",\n\t\t\t\"EU (Ireland)\",\n\t\t\t\"EU (London)\",\n\t\t\t\"EU (Paris)\",\n\t\t\t\"EU (Frankfurt)\",\n\t\t\t\"EU (Stockholm)\",\n\t\t\t\"Asia Pacific (Hong Kong)\",\n\t\t\t\"Asia Pacific (Mumbai)\",\n\t\t\t\"Asia Pacific (Singapore)\",\n\t\t\t\"Asia Pacific (Sydney)\",\n\t\t\t\"Asia Pacific (Tokyo)\",\n\t\t\t\"Asia Pacific (Seoul)\",\n\t\t\t\"Asia Pacific (Osaka-Local)\",\n\t\t\t\"South America (Sao Paulo)\",\n\t\t\t\"Canada (Central)\",\n\t\t\t\"Middle East (Bahrain)\",\n\t\t\t\"Africa (Cape Town)\"\n        ]\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/integrations/Amazon",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"integrations",
+								"Amazon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add AWS GovCloud Account Record",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "712399db-9dfd-4d65-a831-f00b42281093",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "export",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"values\": {\n\t\t\"Account Alias\": \"My AWS\",\n        \"GovCloud Regions\" : [\n\t\t\t\"AWS GovCloud (US-West)\",\n\t\t\t\"AWS GovCloud (US-East)\"\n        ]\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/integrations/Amazon",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"integrations",
+								"Amazon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Azure Subscription Record",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "712399db-9dfd-4d65-a831-f00b42281093",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "export",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"values\": {\n\t\t\"Subscription Alias\": \"My Azure Subscription\",\n\t\t\"Subscription ID\": \"enter your azure sub id\",\n\t\t\"Application ID\": \"enter your azure app id\",\n\t\t\"Key\": \"enter your azure secret\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/integrations/Amazon",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"integrations",
+								"Amazon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Record",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/integrations/Amazon/My%20AWS",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"integrations",
+								"Amazon",
+								"My%20AWS"
+							]
+						},
+						"description": "This example delets an Amazon account with an alias of \"My AWS\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch stats and status",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "712399db-9dfd-4d65-a831-f00b42281093",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "export",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/integrations/Amazon/testing_us/statistics-and-status",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"integrations",
+								"Amazon",
+								"testing_us",
+								"statistics-and-status"
+							]
+						},
+						"description": "This example checks the status of an Amazon account called \"My AWS\"."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "Diagram as JSON",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/network",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"network"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
