@@ -10,7 +10,7 @@ An API Key is required, a guide is availbale [here](https://support.hyperglance.
 
 ## Usage
 
-To deploy this, from the hg_export_topology directory and execute the following command sequence:
+To deploy this, from the export_png_to_s3 directory and execute the following command sequence:
 
 ```bash
 terraform init
