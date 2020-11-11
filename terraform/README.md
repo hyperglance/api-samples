@@ -122,7 +122,7 @@ module "eventBridge_deploy" {
 }
 ```
 
-To override the default, uncomment the `event_schedule` parameter and use the desired schedule sxpression. This accepts either [CRON](https://docs.aws.amazon.com/eventbridge/latest/userguide/scheduled-events.html#cron-expressions) or [RATE](https://docs.aws.amazon.com/eventbridge/latest/userguide/scheduled-events.html#rate-expressions) expressions.
+To override the default, uncomment the `event_schedule` parameter and use the desired schedule expression. This accepts either [CRON](https://docs.aws.amazon.com/eventbridge/latest/userguide/scheduled-events.html#cron-expressions) or [RATE](https://docs.aws.amazon.com/eventbridge/latest/userguide/scheduled-events.html#rate-expressions) expressions.
 
 ## Requirements
 
