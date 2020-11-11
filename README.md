@@ -6,6 +6,7 @@ Use these APIs to:
 
 * Programmatically connect Hyperglance to your cloud environments
 * Programmatically generate PNG or VSDX diagrams.
+* Programmatically generate and save PNG diagrams to S3 using AWS Lambda and Event Bridge.
 
 ## Get Started
 Get started by [creating an API Key](https://support.hyperglance.com/knowledge/getting-started-with-the-hyperglance-api).
@@ -15,3 +16,4 @@ Then click below to find samples and additional documentation for:
 * [CURL (command-line)](curl)
 * [Python](python)
 * [Postman](postman)
+* [AWS Lambda (terraform)](terraform)
