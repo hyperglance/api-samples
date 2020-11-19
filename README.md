@@ -2,6 +2,8 @@
 
 This repository contains samples that demonstrate the usage of the Hyperglance APIs.
 
+These samples are compatible with Hyperglance v6.5 to v6.7
+
 Use these APIs to:
 
 * Programmatically connect Hyperglance to your cloud environments
