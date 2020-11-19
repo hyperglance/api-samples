@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "95c3c1ea-b1b4-41cf-b346-b1daec1cfbfa",
+		"_postman_id": "f8062b8d-e4f4-4913-a04d-3fc2ad79f150",
 		"name": "Hyperglance API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -238,12 +238,13 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Accounts & Subscriptions",
+			"name": "Integrations (Accounts & Subscriptions)",
 			"item": [
 				{
-					"name": "List Collector Records",
+					"name": "List AWS Accounts",
 					"protocolProfileBehavior": {
-						"disableBodyPruning": true
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
 					},
 					"request": {
 						"auth": {
@@ -251,12 +252,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "712399db-9dfd-4d65-a831-f00b42281093",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "export",
+									"value": "my-api-user",
 									"type": "string"
 								}
 							]
@@ -268,23 +269,57 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://10.0.0.1/hgapi/records?datasource=Amazon",
+							"raw": "https://{{url}}/hgapi/integrations/Amazon",
 							"protocol": "https",
 							"host": [
-								"10",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
 							"path": [
 								"hgapi",
-								"records"
-							],
-							"query": [
+								"integrations",
+								"Amazon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Azure Subscriptions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
 								{
-									"key": "datasource",
-									"value": "Amazon"
+									"key": "password",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
 								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{url}}/hgapi/integrations/Azure",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hgapi",
+								"integrations",
+								"Azure"
 							]
 						}
 					},
@@ -303,7 +338,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
 									"type": "string"
 								},
 								{
@@ -323,16 +358,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"values\": {\n\t\t\"Account Alias\": \"My AWS\",\n\t\t\"Role ARN\": \"\",\n        \"Regions\" : [\n\t\t\t\"US East (N. Virginia)\",\n\t\t\t\"US East (Ohio)\",\n\t\t\t\"US West (N. California)\",\n\t\t\t\"US West (Oregon)\",\n\t\t\t\"EU (Ireland)\",\n\t\t\t\"EU (London)\",\n\t\t\t\"EU (Paris)\",\n\t\t\t\"EU (Frankfurt)\",\n\t\t\t\"EU (Stockholm)\",\n\t\t\t\"Asia Pacific (Hong Kong)\",\n\t\t\t\"Asia Pacific (Mumbai)\",\n\t\t\t\"Asia Pacific (Singapore)\",\n\t\t\t\"Asia Pacific (Sydney)\",\n\t\t\t\"Asia Pacific (Tokyo)\",\n\t\t\t\"Asia Pacific (Seoul)\",\n\t\t\t\"Asia Pacific (Osaka-Local)\",\n\t\t\t\"South America (Sao Paulo)\",\n\t\t\t\"Canada (Central)\",\n\t\t\t\"Middle East (Bahrain)\",\n\t\t\t\"Africa (Cape Town)\"\n        ]\n\t}\n}"
+							"raw": "{\n    \"accountAlias\": \"AWS User 01\",\n    \"accessKey\": \"{{accessKey}}\",\n    \"secretKey\": \"{{secretKey}}\",\n    \"regions\" : [\n        \"us-east-1\",\n        \"us-east-2\",\n        \"us-west-1\",\n        \"us-west-2\",\n        \"eu-west-1\",\n        \"eu-west-2\",\n        \"eu-west-3\",\n        \"eu-central-1\", \n        \"eu-north-1\",\n        \"ap-east-1\",\n        \"ap-south-1\",\n        \"ap-southeast-1\",\n        \"ap-southeast-2\",\n        \"ap-northeast-1\",\n        \"ap-northeast-2\",\n        \"ap-northeast-3\",\n        \"sa-east-1\",\n        \"ca-central-1\", \n        \"me-south-1\",\n        \"af-south-1\"\n    ]\n}"
 						},
 						"url": {
-							"raw": "https://10.0.0.1/hgapi/integrations/Amazon",
+							"raw": "https://{{url}}/hgapi/integrations/Amazon",
 							"protocol": "https",
 							"host": [
-								"10",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
 							"path": [
 								"hgapi",
@@ -356,12 +388,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "712399db-9dfd-4d65-a831-f00b42281093",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "export",
+									"value": "my-api-user",
 									"type": "string"
 								}
 							]
@@ -376,16 +408,13 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"values\": {\n\t\t\"Account Alias\": \"My AWS\",\n        \"GovCloud Regions\" : [\n\t\t\t\"AWS GovCloud (US-West)\",\n\t\t\t\"AWS GovCloud (US-East)\"\n        ]\n\t}\n}"
+							"raw": "{\n    \"accountAlias\": \"AWS Gov User 01\",\n    \"accessKey\": \"{{govAccessKey}}\",\n    \"secretKey\": \"{{govSecretKey}}\",\n    \"regions\" : [\n        \"us-gov-west-1\",\n        \"us-gov-east-1\"\n    ]\n}"
 						},
 						"url": {
-							"raw": "https://10.0.0.1/hgapi/integrations/Amazon",
+							"raw": "https://{{url}}/hgapi/integrations/Amazon",
 							"protocol": "https",
 							"host": [
-								"10",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
 							"path": [
 								"hgapi",
@@ -409,12 +438,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "712399db-9dfd-4d65-a831-f00b42281093",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "export",
+									"value": "my-api-user",
 									"type": "string"
 								}
 							]
@@ -429,35 +458,32 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"values\": {\n\t\t\"Subscription Alias\": \"My Azure Subscription\",\n\t\t\"Subscription ID\": \"enter your azure sub id\",\n\t\t\"Application ID\": \"enter your azure app id\",\n\t\t\"Key\": \"enter your azure secret\"\n\t}\n}"
+							"raw": "{\n    \"accountAlias\": \"Azure User 01\",\n    \"subscriptionId\": \"{{azureSubscriptionId}}\",\n    \"applicationId\": \"{{azureAppId}}\",\n    \"key\": \"{{azureKey}}\"\n}"
 						},
 						"url": {
-							"raw": "https://10.0.0.1/hgapi/integrations/Amazon",
+							"raw": "https://{{url}}/hgapi/integrations/Azure",
 							"protocol": "https",
 							"host": [
-								"10",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
 							"path": [
 								"hgapi",
 								"integrations",
-								"Amazon"
+								"Azure"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete Record",
+					"name": "Delete AWS Record",
 					"request": {
 						"auth": {
 							"type": "basic",
 							"basic": [
 								{
 									"key": "password",
-									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
 									"type": "string"
 								},
 								{
@@ -470,19 +496,53 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://10.0.0.1/hgapi/integrations/Amazon/My%20AWS",
+							"raw": "https://{{url}}/hgapi/integrations/Amazon/AWS Gov User 01",
 							"protocol": "https",
 							"host": [
-								"10",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
 							"path": [
 								"hgapi",
 								"integrations",
 								"Amazon",
-								"My%20AWS"
+								"AWS Gov User 01"
+							]
+						},
+						"description": "This example delets an Amazon account with an alias of \"My AWS\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Azure Record",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/hgapi/integrations/Azure/Azure User 01",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hgapi",
+								"integrations",
+								"Azure",
+								"Azure User 01"
 							]
 						},
 						"description": "This example delets an Amazon account with an alias of \"My AWS\"."
@@ -497,12 +557,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "712399db-9dfd-4d65-a831-f00b42281093",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "export",
+									"value": "my-api-user",
 									"type": "string"
 								}
 							]
@@ -510,20 +570,93 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://10.0.0.1/hgapi/integrations/Amazon/testing_us/statistics-and-status",
+							"raw": "https://{{url}}/hgapi/integrations/Amazon/AWS User 01/statistics-and-status",
 							"protocol": "https",
 							"host": [
-								"10",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
 							"path": [
 								"hgapi",
 								"integrations",
 								"Amazon",
-								"testing_us",
+								"AWS User 01",
 								"statistics-and-status"
+							]
+						},
+						"description": "This example checks the status of an Amazon account called \"My AWS\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch status",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/hgapi/integrations/Amazon/AWS User 01/status",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hgapi",
+								"integrations",
+								"Amazon",
+								"AWS User 01",
+								"status"
+							]
+						},
+						"description": "This example checks the status of an Amazon account called \"My AWS\"."
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch statistics",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{url}}/hgapi/integrations/Amazon/AWS User 01/statistics",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hgapi",
+								"integrations",
+								"Amazon",
+								"AWS User 01",
+								"statistics"
 							]
 						},
 						"description": "This example checks the status of an Amazon account called \"My AWS\"."
@@ -544,7 +677,7 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "77415974-1b16-4ee8-af98-6be979611158",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
 									"type": "string"
 								},
 								{
@@ -557,13 +690,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://10.0.0.1/hgapi/network",
+							"raw": "https://{{url}}/hgapi/network",
 							"protocol": "https",
 							"host": [
-								"10",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
 							"path": [
 								"hgapi",
@@ -575,6 +705,229 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Augmentation",
+			"item": [
+				{
+					"name": "Augment Attributes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attributes\": [\r\n        {\r\n            \"UID\": node_UID,\r\n            \"attributes\": [\r\n                { \"name\": \"Contact E-Mail\", \"value\": \"jon@example.com\" }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8443/hgapi/augment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"hgapi",
+								"augment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Augment URLs",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"urls\":[  \r\n      {  \r\n         \"UID\":\"{{augmentUID}}\",\r\n         \"urls\":[  \r\n            {  \r\n               \"displayName\":\"Hyperglance API\",\r\n               \"urlPath\":\"https://www.hyperglance.com/api/\"\r\n            },\r\n            {  \r\n               \"displayName\":\"Hyperglance\",\r\n               \"urlPath\":\"https://twitter.com/hyperglance\"\r\n            }\r\n         ]\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{url}}/hgapi/augment",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hgapi",
+								"augment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Augment App Tags",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appTags\": [\r\n        {\r\n            \"UID\": \"{{augmentUID}}\",\r\n            \"appTags\": [\"AugmentedAppTag1\", \"AugmentedAppTag2\"]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{url}}/hgapi/augment",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hgapi",
+								"augment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Augment App Tags, URLs and Attributes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "cb48315e-6568-4227-8d0a-9b59fe2f698b",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "my-api-user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appTags\": [\r\n        {\r\n            \"UID\": \"{{augmentUID}}\",\r\n            \"appTags\": [\"AugmentedAppTag1\", \"AugmentedAppTag2\"]\r\n        }\r\n    ],\r\n    \"attributes\": [\r\n        {\r\n            \"UID\": \"{{augmentUID}}\",\r\n            \"attributes\": [\r\n                { \"name\": \"Contact E-Mail\", \"value\": \"jon@example.com\" }\r\n            ]\r\n        }\r\n    ],\r\n    \"urls\":[  \r\n      {  \r\n         \"UID\":\"{{augmentUID}}\",\r\n         \"urls\":[  \r\n            {  \r\n               \"displayName\":\"Hyperglance API\",\r\n               \"urlPath\":\"https://www.hyperglance.com/api/\"\r\n            },\r\n            {  \r\n               \"displayName\":\"Hyperglance\",\r\n               \"urlPath\":\"https://twitter.com/hyperglance\"\r\n            }\r\n         ]\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{url}}/hgapi/augment",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"hgapi",
+								"augment"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "d0701a1e-85a8-4e47-8bbe-66b9c2fd798f",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "Local-Export-01",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "007f179d-899e-49f7-8175-fbd3f6c03ce8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cd3129e4-e008-4652-8358-d1f8325bbbb1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "d84d5d1b-103c-414f-a9c9-45aa47fb4126",
+			"key": "host",
+			"value": "127.0.0.1:8443"
 		}
 	],
 	"protocolProfileBehavior": {}

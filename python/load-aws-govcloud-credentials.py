@@ -18,21 +18,19 @@ HYPERGLANCE_URL = "https://10.0.0.1"
 API_KEY = ('my-api-user', '77415974-1b16-4ee8-af98-6be979611158')
 
 # Any friendly name for the AWS account
-AWS_ACCOUNT_ALIAS = 'My AWS'
+AWS_ACCOUNT_ALIAS = 'My Gov AWS'
 
 # JSON for connecting Hyperglance with GovCloud AWS accounts
 JSON = {
-	"values": {
-		"Account Alias": AWS_ACCOUNT_ALIAS,
-		"GovCloud Regions": [
-			"AWS GovCloud (US-West)",
-			"AWS GovCloud (US-East)"
-		],
-		
-		# [Optional]: If Hyperglance is hosted outside of AWS you can connect it to AWS using Access/Secret key-pair:
-		#"Access Key": "ABCDEFGHIJKLMNOPQRST",
-		#"Secret Key": "aBcDeFgHiJkLmNoPqRsTuVwXyZ+aEiOu+123456789"
-	}
+	"accountAlias": AWS_ACCOUNT_ALIAS,
+	"govCloudRegions": [
+		 "us-gov-east-1",
+		 "us-gov-west-1"
+	],
+	
+	# [Optional]: If Hyperglance is hosted outside of AWS you can connect it to AWS using Access/Secret key-pair:
+	#"accessKey": "ABCDEFGHIJKLMNOPQRST",
+	#"secretKey": "aBcDeFgHiJkLmNoPqRsTuVwXyZ+aEiOu+123456789"
 }
 
 
@@ -57,8 +55,8 @@ if not r.json()['isSuccess']:
 # Poll Hyperglance until it has finished ingesting cloud data
 print('Waiting for Hyperglance to ingest cloud data...', end='')
 while True:
-	status = requests.get(HYPERGLANCE_URL + '/hgapi/integrations/Amazon/{alias}/statistics-and-status'.format(alias=urllib.parse.quote(AWS_ACCOUNT_ALIAS)), auth=API_KEY, verify=False)
-	if status.json()['collectionStats']['numOfCompletedCollections'] > 1:
+	status = requests.get(HYPERGLANCE_URL + '/hgapi/integrations/Amazon/{alias}/statistics'.format(alias=urllib.parse.quote(AWS_ACCOUNT_ALIAS)), auth=API_KEY, verify=False)
+	if status.json()['numOfCompletedCycles'] > 1:
 		break;
 	print(".", end="")
 	time.sleep(3)

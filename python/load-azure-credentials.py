@@ -23,12 +23,10 @@ SUB_ALIAS = 'My Azure Subscription'
 # [Required]: Find out what your sib/app/key are here: https://support.hyperglance.com/knowledge/azure-collector-setup
 # JSON for connecting Hyperglance with Azure subscriptions
 JSON = {
-	"values": {
-		"Subscription Alias": SUB_ALIAS,
-		"Subscription ID": "enter your azure sub id",
-		"Application ID": "enter your azure app id",
-		"Key": "enter your azure secret"
-	}
+	"accountAlias": SUB_ALIAS,
+	"subscriptionId": "enter your azure subscription id here",
+	"applicationId": "enter your azure application id here",
+	"key": "enter your azure secret key here"
 }
 
 
@@ -53,8 +51,8 @@ if not r.json()['isSuccess']:
 # Poll Hyperglance until it has finished ingesting cloud data
 print('Waiting for Hyperglance to ingest cloud data...', end='')
 while True:
-	status = requests.get(HYPERGLANCE_URL + '/hgapi/integrations/Azure/{alias}/statistics-and-status'.format(alias=urllib.parse.quote(SUB_ALIAS)), auth=API_KEY, verify=False)
-	if status.json()['collectionStats']['numOfCompletedCollections'] > 1:
+	status = requests.get(HYPERGLANCE_URL + '/hgapi/integrations/Azure/{alias}/statistics'.format(alias=urllib.parse.quote(SUB_ALIAS)), auth=API_KEY, verify=False)
+	if status.json()['numOfCompletedCycles'] > 1:
 		break;
 	print('.', end='')
 	time.sleep(3)

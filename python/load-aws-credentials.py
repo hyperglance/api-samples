@@ -22,39 +22,37 @@ AWS_ACCOUNT_ALIAS = 'My AWS'
 # JSON for connecting Hyperglance with commercial AWS accounts
 # [Recommended]: Adjust the list of regions for Hyperglance to ingest
 JSON = {
-	"values": {
-		"Account Alias": AWS_ACCOUNT_ALIAS,
-		"Regions": [
-			"US East (N. Virginia)",
-			#"US East (Ohio)",
-			#"US West (N. California)",
-			#"US West (Oregon)",
-			#"EU (Ireland)",
-			#"EU (London)",
-			#"EU (Paris)",
-			#"EU (Frankfurt)",
-			#"EU (Stockholm)",
-			#"Asia Pacific (Hong Kong)",
-			#"Asia Pacific (Mumbai)",
-			#"Asia Pacific (Singapore)",
-			#"Asia Pacific (Sydney)",
-			#"Asia Pacific (Tokyo)",
-			#"Asia Pacific (Seoul)",
-			#"Asia Pacific (Osaka-Local)",
-			#"South America (Sao Paulo)",
-			#"Canada (Central)",
-			#"Middle East (Bahrain)",
-			#"Africa (Cape Town)"
+		"accountAlias": AWS_ACCOUNT_ALIAS,
+		"regions": [
+			"us-east-1",
+			"us-east-2",
+			"us-west-1",
+			"us-west-2",
+			"eu-west-1",
+			"eu-west-2",
+			"eu-west-3",
+			"eu-central-1",
+			"eu-north-1",
+			"ap-east-1",
+			"ap-south-1",
+			"ap-southeast-1",
+			"ap-southeast-2",
+			"ap-northeast-1",
+			"ap-northeast-2",
+			"ap-northeast-3",
+			"sa-east-1",
+			"ca-central-1",
+			"me-south-1",
+			"af-south-1"
 		],
 		
 		# [Optional]: Provide a cross-account role ARN to connect Hyperglance with accounts external to the one it is running in:
 		#             Blank here will connect Hyperglance with the account hosting the Instance.
-		"Role ARN": "",
+		"roleARN": "",
 		
 		# [Optional]: If Hyperglance is hosted outside of AWS you can connect using Access/Secret key-pair:
-		#"Access Key": "ABCDEFGHIJKLMNOPQRST",
-		#"Secret Key": "aBcDeFgHiJkLmNoPqRsTuVwXyZ+aEiOu+123456789"
-	}
+		#"accessKey": "ABCDEFGHIJKLMNOPQRST",
+		#"secretKey": "aBcDeFgHiJkLmNoPqRsTuVwXyZ+aEiOu+123456789"
 }
 
 
@@ -79,8 +77,8 @@ if not r.json()['isSuccess']:
 # Poll Hyperglance until it has finished ingesting cloud data
 print('Waiting for Hyperglance to ingest cloud data...', end='')
 while True:
-	status = requests.get(HYPERGLANCE_URL + '/hgapi/integrations/Amazon/{alias}/statistics-and-status'.format(alias=urllib.parse.quote(AWS_ACCOUNT_ALIAS)), auth=API_KEY, verify=False)
-	if status.json()['collectionStats']['numOfCompletedCollections'] > 1:
+	status = requests.get(HYPERGLANCE_URL + '/hgapi/integrations/Amazon/{alias}/statistics'.format(alias=urllib.parse.quote(AWS_ACCOUNT_ALIAS)), auth=API_KEY, verify=False)
+	if status.json()['numOfCompletedCycles'] > 1:
 		break;
 	print('.', end='')
 	time.sleep(3)
