@@ -50,19 +50,18 @@ JSON = {
 #}
 
 # Example: Export one Azure Resource Group
-# Note: Resource Groups are considered tag-views in Hyperglance (see next example)
+# Note: Resource Groups are considered tag-views in Hyperglance
+# See also: https://support.hyperglance.com/knowledge/tag-view
 #JSON = {
 #	"datasource": "Azure",
 #	"tagViewIds": ["Resource Group: name-of-my-resource-grp"]
 #}
 
-# Example: Export a tag-view
-# See also: https://support.hyperglance.com/knowledge/tag-view
+# Example: Export resources with certain tags
 #JSON = {
-#	"datasource": "Amazon", # or "Azure"
-#	"tagViewIds": ["Name of a Tag View"]
+#	"tags": [{"key":"MyTag", "value":"TheValue"}],
+#	"includeDependencies": true
 #}
-
 
 #####################
 # EXECUTION START ->

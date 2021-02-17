@@ -149,16 +149,14 @@ curl -fk https://10.0.0.1/hgapi/export-vsdx \
   --request POST --header "Content-Type: application/json"
 ```
 
-### Export a Hyperglance Tag View
-
-See also: https://support.hyperglance.com/knowledge/tag-view
+### Export Resources with Certain Tags
 
 To PNG:
 ```bash
 curl -fk https://10.0.0.1/hgapi/export-png \
   --output hyperglance.png \
   --user my-api-user:77415974-1b16-4ee8-af98-6be979611158 \
-  --data '{ "datasource":"Azure", "tagViewIds": ["Name of a Tag View"] }' \
+  --data '{ "tags":[{"key":"MyTag", "value":"TheValue"}], "includeDependencies":true }' \
   --request POST --header "Content-Type: application/json"
 ```
 
@@ -167,6 +165,6 @@ To VSDX:
 curl -fk https://10.0.0.1/hgapi/export-vsdx \
   --output hyperglance.vsdx \
   --user my-api-user:77415974-1b16-4ee8-af98-6be979611158 \
-  --data '{ "datasource":"Azure", "tagViewIds": ["Name of a Tag View"] }' \
+  --data '{ "tags":[{"key":"MyTag", "value":"TheValue"}], "includeDependencies":true }' \
   --request POST --header "Content-Type: application/json"
 ```
