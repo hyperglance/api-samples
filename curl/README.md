@@ -23,7 +23,7 @@ Choose a use-case to get started:
 1. [Export entire Azure diagram](#Export-entire-Azure-diagram)
 1. [Export a single Azure subscription](#Export-a-single-Azure-subscription)
 1. [Export an Azure Resource Group](#Export-an-Azure-Resource-Group)
-1. [Export a Hyperglance Tag View](#Export-a-Hyperglance-Tag-View)
+1. [Export a Hyperglance Tag View](#Export-Resources-with-Certain-Tags)
 
 ## Use-Case Examples
 
