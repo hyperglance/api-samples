@@ -53,12 +53,12 @@ if not r.json()['isSuccess']:
 	quit()
 
 # Poll Hyperglance until it has finished ingesting cloud data
-print('Waiting for Hyperglance to ingest cloud data...', end='')
+print('Waiting for Hyperglance to ingest cloud data...', end='', flush=True)
 while True:
 	status = requests.get(HYPERGLANCE_URL + '/hgapi/integrations/Amazon/{alias}/statistics'.format(alias=urllib.parse.quote(AWS_ACCOUNT_ALIAS)), auth=API_KEY, verify=False)
 	if status.json()['numOfCompletedCycles'] > 1:
 		break;
-	print(".", end="")
+	print(".", end="", flush=True)
 	time.sleep(3)
 
 print('Hyperglance is now ready!')
