@@ -18,15 +18,21 @@ HYPERGLANCE_URL = "https://10.0.0.1"
 API_KEY = ('my-api-user', '77415974-1b16-4ee8-af98-6be979611158')
 
 # Any friendly name for the Azure subscription
-SUB_ALIAS = 'My Azure Subscription'
+SUBSCRIPTION_ALIAS = 'My Azure Subscription'
 
 # [Required]: Find out what your sib/app/key are here: https://support.hyperglance.com/knowledge/azure-collector-setup
 # JSON for connecting Hyperglance with Azure subscriptions
 JSON = {
-	"accountAlias": SUB_ALIAS,
+	"accountAlias": SUBSCRIPTION_ALIAS,
 	"subscriptionId": "enter your azure subscription id here",
 	"applicationId": "enter your azure application id here",
 	"key": "enter your azure secret key here"
+	
+	# [Optional]: Uncomment for Azure Government
+	#"environment": ["Azure US Government"],
+	
+	# [Optional]: Organize accounts by grouping related accounts together. E.g. "accountGroups": ["Production", "US", "Team X"]
+	"accountGroups": []
 }
 
 

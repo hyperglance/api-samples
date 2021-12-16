@@ -30,7 +30,13 @@ JSON = {
 	
 	# [Optional]: If Hyperglance is hosted outside of AWS you can connect it to AWS using Access/Secret key-pair:
 	#"accessKey": "ABCDEFGHIJKLMNOPQRST",
-	#"secretKey": "aBcDeFgHiJkLmNoPqRsTuVwXyZ+aEiOu+123456789"
+	#"secretKey": "aBcDeFgHiJkLmNoPqRsTuVwXyZ+aEiOu+123456789",
+			
+	# [Optional]: Specify if this account should only ingest billing data and not inventory data
+	"isBillingOnly": False,
+	
+	# [Optional]: Organize accounts by grouping related accounts together. E.g. "accountGroups": ["Production", "US", "Team X"]
+	"accountGroups": []
 }
 
 
