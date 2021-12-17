@@ -26,7 +26,7 @@ JSON = {
 	"accountAlias": SUBSCRIPTION_ALIAS,
 	"subscriptionId": "enter your azure subscription id here",
 	"applicationId": "enter your azure application id here",
-	"key": "enter your azure secret key here"
+	"key": "enter your azure secret key here",
 	
 	# [Optional]: Uncomment for Azure Government
 	#"environment": ["Azure US Government"],
