@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f8062b8d-e4f4-4913-a04d-3fc2ad79f150",
+		"_postman_id": "26fabc74-158b-4f68-a162-25de24b12fba",
 		"name": "Hyperglance API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31150803"
 	},
 	"item": [
 		{
@@ -118,8 +119,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Export to PNG",
@@ -234,8 +234,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Integrations (Accounts & Subscriptions)",
@@ -663,8 +662,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "General",
@@ -703,8 +701,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Augmentation",
@@ -882,8 +879,71 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
+		},
+		{
+			"name": "inventory",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "My API Password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "My API User",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://10.0.0.1/hgapi/inventory?tag_key=my_key&tag_value=my_value&datasource=Amazon&account=my_account&type=Amazon EC2",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"0",
+								"1"
+							],
+							"path": [
+								"hgapi",
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "tag_key",
+									"value": "my_key"
+								},
+								{
+									"key": "tag_value",
+									"value": "my_value"
+								},
+								{
+									"key": "datasource",
+									"value": "Amazon"
+								},
+								{
+									"key": "account",
+									"value": "my_account"
+								},
+								{
+									"key": "type",
+									"value": "Amazon EC2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
@@ -905,7 +965,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "007f179d-899e-49f7-8175-fbd3f6c03ce8",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -915,7 +974,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "cd3129e4-e008-4652-8358-d1f8325bbbb1",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -925,10 +983,8 @@
 	],
 	"variable": [
 		{
-			"id": "d84d5d1b-103c-414f-a9c9-45aa47fb4126",
 			"key": "host",
 			"value": "127.0.0.1:8443"
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
